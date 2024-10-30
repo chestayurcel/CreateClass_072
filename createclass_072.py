@@ -12,7 +12,16 @@ class PersegiPanjang:
     def __str__(self):
         return f"Persegi Panjang dengan Panjang {self.panjang} cm, dan Lebar {self.lebar} cm"
     
-pp = PersegiPanjang(8, 5)
-print(pp.__str__())
-print("Kelilingnya adalah = ", pp.keliling(), "cm") 
-print("Luasnya adalah = ", pp.luas(), "cm")
+def main():
+    try:
+        panjang = float(input("Masukkan panjangnya : "))
+        lebar = float(input("Masukkan lebarnya : "))
+        if panjang <= 0 or lebar <= 0:
+            print ("Nilai harus positif")
+            return
+        pp = PersegiPanjang(panjang, lebar)
+        print (pp.keliling())
+        print (pp.luas())
+    except ValueError:
+        print("Nilai harus sesuai")
+main()
